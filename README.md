@@ -1,33 +1,32 @@
-About <pkg_name>-feedstock
+About pytrec-eval-terrier-feedstock
 =======================
 
 Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: <home_url>
+Home: https://github.com/terrierteam/pytrec_eval
 
-Package license: <pkg_license>
+Package license: MIT
 
-Summary: <pkg_summary>
-
+Summary: Provides Python bindings for popular Information Retrieval measures implemented within trec_eval.
 
 Current release info
 ====================
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pytrec-eval-terrier-green.svg)](https://anaconda.org/anaconda/pytrec-eval-terrier) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/pytrec-eval-terrier.svg)](https://anaconda.org/anaconda/pytrec-eval-terrier) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/pytrec-eval-terrier.svg)](https://anaconda.org/anaconda/pytrec-eval-terrier) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/pytrec-eval-terrier.svg)](https://anaconda.org/anaconda/pytrec-eval-terrier) |
 
-Installing <pkg_name>
+Installing pytrec-eval-terrier
 ==================
 
-Installing `<pkg_name>` from the main channel can be achieved by:
+Installing `pytrec-eval-terrier` from the main channel can be achieved by:
 
 ```
-conda install <pkg_name>
+conda install pytrec-eval-terrier
 ```
 
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
+It is possible to list all of the versions of `pytrec-eval-terrier` available on your platform with `conda`:
 
 ```
-conda search <pkg_name>
+conda search pytrec-eval-terrier
 ```

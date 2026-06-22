@@ -1,45 +1,57 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "pytrec-eval-terrier" %}
+{% set version = "0.5.10" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
+  sha256: eaaf20580d17b5575a233e04dab8a4cbcc01a7e45be8cf547c07f0a2bb3e7eb9
 
 build:
-  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
+  number: 0
 
 requirements:
+  build:
+    - {{ stdlib('c') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   host:
     - python
+    - setuptools
+    - wheel
     - pip
   run:
     - python
+    - numpy >=1.15.1
+    - scipy >=1.1.0
 
 test:
   imports:
-    - {{ name.replace('-', '.') }}
-  requires:
-    - pip
+    - pytrec_eval
   commands:
     - pip check
+  requires:
+    - pip
+    - python
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
+  home: https://github.com/terrierteam/pytrec_eval
+  summary: Provides Python bindings for popular Information Retrieval measures implemented within trec_eval.
   description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+   pytrec\_eval is a Python interface to TREC's evaluation tool,
+   [trec\_eval](https://github.com/usnistgov/trec_eval).
+   It is an attempt to stop the cultivation of custom implementations of Information Retrieval
+   evaluation measures for the Python programming language.
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  doc_url: https://github.com/terrierteam/pytrec_eval
+  dev_url: https://github.com/terrierteam/pytrec_eval
 
 extra:
   recipe-maintainers:
-    - Jrice1317
+    - macavaney
+    - cmacdonald
